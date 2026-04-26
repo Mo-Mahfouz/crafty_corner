@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/productgrid', [ProductsController::class, 'productsGrid'])->name('productgrid');
+Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
-Route::get('productdetails/{id}/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::get('productdetails/{id}/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
