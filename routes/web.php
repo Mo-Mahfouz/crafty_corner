@@ -4,11 +4,31 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/', function () {
     return view('index');
 })->name('home');
+
+// Show login page
+Route::get('/login', function () {
+    return view('Auth.login');
+})->name('login');
+
+// Handle login
+Route::post('/login', [AuthController::class, 'login']);
+
+// Show register page
+Route::get('/register', function () {
+    return view('Auth.register');
+})->name('register');
+
+// Handle register
+Route::post('/register', [AuthController::class, 'register']);
+
+// Logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
