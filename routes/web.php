@@ -5,11 +5,15 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
 
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+
+
+// Route::get('/', function () {
+//     return view('index');
+// })->name('home');
 
 // Show login page
 Route::get('/login', function () {
@@ -29,6 +33,19 @@ Route::post('/register', [AuthController::class, 'register']);
 
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+//Home
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Contact
+Route::post('/contact', [ContactController::class,'store'])->name('contact.store');
+//our story
+Route::get('/our-story', [HomeController::class,'ourStory'])->name('ourstory');
+
+//collection  category
+Route::get('/collection', function () {
+    return view('collection');
+})->name('collection');
 
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
