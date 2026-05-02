@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -47,16 +46,6 @@ img {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.section-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 10px;
 }
 
 .btn-outline {
@@ -153,30 +142,6 @@ a {
   gap: 6px;
 }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 14px;
-  margin-right: 6px;
-}
-.search-box input {
-  border: none;
-  background: transparent;
-  font-size: 12px;
-  font-family: var(--font-sans);
-  color: var(--dark);
-  outline: none;
-  width: 110px;
-}
-.search-box svg {
-  color: var(--muted);
-  flex-shrink: 0;
-}
-
 .icon-btn {
   background: none;
   border: none;
@@ -190,27 +155,10 @@ a {
   transition:
     color 0.2s,
     background 0.2s;
-  position: relative;
 }
 .icon-btn:hover {
   color: var(--gold);
   background: var(--gold-pale);
-}
-
-.badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background: var(--gold);
-  color: var(--white);
-  font-size: 9px;
-  font-weight: 600;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ── PAGE HEADER ── */
@@ -287,64 +235,6 @@ a {
   font-weight: 500;
 }
 
-.search-inline {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  padding: 8px 16px;
-  background: var(--white);
-}
-.search-inline input {
-  border: none;
-  background: transparent;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  color: var(--dark);
-  outline: none;
-  width: 180px;
-}
-.search-inline svg {
-  color: var(--muted);
-  flex-shrink: 0;
-}
-
-/* ── RESULTS META ── */
-.results-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 48px 28px;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-.results-meta strong {
-  color: var(--dark);
-}
-
-.sort-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.sort-wrap select {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  color: var(--dark);
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 6px 12px;
-  outline: none;
-  cursor: pointer;
-  letter-spacing: 0.04em;
-}
-
 /* ── PRODUCTS GRID ── */
 .products-grid {
   display: grid;
@@ -394,60 +284,6 @@ a {
   transition: transform 0.45s ease;
 }
 
-.stock-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-.stock-badge.in {
-  background: #f0faf0;
-  color: #3a7a3a;
-}
-.stock-badge.low {
-  background: #fff8e8;
-  color: #a07020;
-}
-.stock-badge.out {
-  background: #ffeaea;
-  color: #c04040;
-}
-
-.wishlist-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--white);
-  border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--muted);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: scale(0.85);
-  transition:
-    opacity 0.25s,
-    transform 0.25s,
-    color 0.2s;
-}
-.product-card:hover .wishlist-btn {
-  opacity: 1;
-  transform: scale(1);
-}
-.wishlist-btn:hover {
-  color: var(--gold);
-}
-
 .product-info {
   padding: 0 2px;
 }
@@ -470,13 +306,6 @@ a {
   transition: color 0.2s;
 }
 .product-card:hover .product-info h3 {
-  color: var(--gold);
-}
-
-.product-price {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
   color: var(--gold);
 }
 
@@ -540,75 +369,6 @@ a {
   border-radius: 0;
 }
 
-/* ── NEWSLETTER ── */
-.newsletter {
-  background: var(--white);
-  padding: 80px 48px;
-}
-.newsletter-inner {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-.nl-symbol {
-  font-size: 24px;
-  color: var(--gold-light);
-  letter-spacing: 8px;
-  margin-bottom: 16px;
-}
-.newsletter h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 4vw, 42px);
-  font-weight: 400;
-  color: var(--dark);
-  margin-bottom: 14px;
-}
-.newsletter p {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 32px;
-  line-height: 1.8;
-}
-.nl-form {
-  display: flex;
-  gap: 0;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  max-width: 440px;
-  margin: 0 auto 12px;
-  background: var(--bg);
-}
-.nl-form input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--dark);
-  padding: 12px 18px;
-  outline: none;
-}
-.nl-form button {
-  background: var(--gold);
-  color: var(--white);
-  border: none;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 12px 22px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.nl-form button:hover {
-  background: #b5803e;
-}
-.newsletter small {
-  font-size: 11px;
-  color: var(--muted);
-}
-
 /* ── FOOTER ── */
 .footer {
   background: var(--white);
@@ -617,42 +377,15 @@ a {
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.6fr;
+  grid-template-columns: 2fr 1fr 1.6fr;
   gap: 48px;
   margin-bottom: 48px;
-}
-.footer-brand .logo {
-  font-size: 15px;
-  margin-bottom: 14px;
-  display: inline-flex;
 }
 .footer-brand p {
   font-size: 13px;
   color: var(--muted);
   line-height: 1.7;
-  margin-bottom: 20px;
   max-width: 240px;
-}
-.socials {
-  display: flex;
-  gap: 12px;
-}
-.socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--mid);
-  transition:
-    color 0.2s,
-    border-color 0.2s;
-}
-.socials a:hover {
-  color: var(--gold);
-  border-color: var(--gold);
 }
 
 .footer-col h4 {
@@ -674,41 +407,47 @@ a {
   color: var(--gold);
 }
 
-.join-col p {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-.footer-nl {
+/* Footer contact form */
+.footer-col form {
   display: flex;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg);
+  flex-direction: column;
+  gap: 10px;
 }
-.footer-nl input {
-  flex: 1;
-  border: none;
-  background: transparent;
+.footer-col form input,
+.footer-col form textarea {
   font-family: var(--font-sans);
   font-size: 12px;
   color: var(--dark);
-  padding: 10px 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 13px;
   outline: none;
+  transition: border-color 0.2s;
+  resize: none;
 }
-.footer-nl button {
+.footer-col form input:focus,
+.footer-col form textarea:focus {
+  border-color: var(--gold);
+}
+.footer-col form textarea {
+  min-height: 80px;
+}
+.footer-col form button {
   background: var(--gold);
   color: var(--white);
   border: none;
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
-  padding: 10px 16px;
+  letter-spacing: 0.06em;
+  padding: 10px 18px;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: background 0.2s;
+  align-self: flex-start;
 }
-.footer-nl button:hover {
+.footer-col form button:hover {
   background: #b5803e;
 }
 
@@ -720,18 +459,6 @@ a {
   align-items: center;
   font-size: 11px;
   color: var(--muted);
-}
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-.footer-links a {
-  font-size: 11px;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.footer-links a:hover {
-  color: var(--gold);
 }
 
 /* ── RESPONSIVE ── */
@@ -748,9 +475,6 @@ a {
   }
 
   .filters-bar {
-    padding: 0 24px 20px;
-  }
-  .results-meta {
     padding: 0 24px 20px;
   }
 
@@ -774,10 +498,6 @@ a {
   }
   .heritage-img {
     height: 260px;
-  }
-
-  .newsletter {
-    padding: 60px 24px;
   }
 
   .footer {
