@@ -12,6 +12,7 @@
     />
   </head>
   <body>
+    <!-- Elgendyyyyyyyyyyyyyyyyy -->
     <!-- ── NAVBAR ── -->
     <header class="navbar">
       <nav class="nav-links left">
