@@ -690,25 +690,6 @@ a {
   }
 } */
 
-.fs-7 {
-  font-size: .7rem  !important;
-}
-.text-gold{
-  color: var(--gold) !important;
-}
-.nav-right a:hover {
-color: var(--gold) !important;
-}
-.nav-right a {
-transition: 0.2s;
-}
-.bg-m{
-  background-color: #f9f7f3;
-}
-
-
-
-
 :root {
   --gold: #c9914a;
   --gold-light: #e8c89a;
@@ -726,6 +707,22 @@ transition: 0.2s;
   --shadow-lg: 0 8px 48px rgba(100, 70, 30, 0.14);
 }
 
+.fs-7 {
+  font-size: .7rem  !important;
+}
+.text-gold{
+  color: var(--gold) !important;
+}
+.nav-right a:hover {
+color: var(--gold) !important;
+}
+.nav-right a {
+transition: 0.2s;
+}
+.bg-m{
+  background-color: #f9f7f3;
+}
+
 body {
   background: var(--bg);
   color: var(--dark);
@@ -741,14 +738,11 @@ h1, h2, h3, em { font-family: var(--font-serif); }
 }
 
 /* ── Custom Buttons ── */
-.btn-primary {
+.btn-b {
   background: var(--gold) !important;
-  border-color: var(--gold) !important;
-  color: white !important;
-  padding: 12px 26px; border-radius: var(--radius);
-  transition: all 0.3s;
+  transition: 2s;
 }
-.btn-primary:hover { background: #b5803e !important; transform: translateY(-2px); }
+.btn-b:hover { background: #b5803e !important; transform: translateY(-2px); }
 
 .btn-outline {
   border: 1.5px solid var(--border);
