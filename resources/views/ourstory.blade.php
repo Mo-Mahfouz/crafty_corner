@@ -101,7 +101,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Your Name">
                     <input type="email" name="email" class="form-control" placeholder="Your Email">
                     <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn-primary w-100 justify-content-center">Send</button>
+                    <button type="submit" class="btn btn-outline-success w-100 justify-content-center">Send</button>
                 </form>
             </div>
         </div>
