@@ -35,12 +35,12 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //Home
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Contact
-Route::post('/contact', [ContactController::class,'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 //our story
-Route::get('/our-story', [HomeController::class,'ourStory'])->name('ourstory');
+Route::get('/our-story', [HomeController::class, 'ourStory'])->name('ourstory');
 
 //collection  category
 Route::get('/collection', function () {
