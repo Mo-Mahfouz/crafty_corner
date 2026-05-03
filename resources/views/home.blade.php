@@ -144,7 +144,7 @@
                 <h3 class="mb-3">Nourhan Store</h3>
                 <p class="text-black opacity-50" >Elevating your everyday style with curated collections.</p>
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 footer-col ps-5 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-6 col-lg-4 footer-col ps-5 d-flex d-md-block flex-column justify-content-center align-items-center">
                 <h4 class="mb-4 pe-5">Shop</h4>
                 <ul class="d-flex flex-column p-0" >
                     <a class="text-black  link-offset-2 link-underline link-underline-opacity-0 opacity-50 mb-2" href="{{ route('home') }}">Home</a>
