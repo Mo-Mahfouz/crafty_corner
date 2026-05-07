@@ -40,8 +40,10 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
         return back()->withErrors([
-            'email' => 'Invalid'
-        ]);
+
+    'email' => 'Invalid credentials'
+]);
+
 
     }
     public function logout(Request $request)

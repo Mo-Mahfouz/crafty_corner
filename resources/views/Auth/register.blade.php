@@ -18,7 +18,6 @@
 
         <!-- LEFT SIDE -->
         <div class="story-area">
-
             <div class="tagline">
                 <h2>Join Timeless Elegance</h2>
                 <p>Create your account and start your fashion journey with Nourhan Store.</p>
@@ -36,45 +35,56 @@
                 <span>secure data</span>
                 <span>exclusive offers</span>
             </div>
-
         </div>
 
-        @if ($errors->any())
-    <div style="color:red; margin-bottom:15px;">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
         <!-- RIGHT SIDE -->
         <div class="form-panel">
 
             <h1>Create Account</h1>
             <div class="subhead">Register to get started</div>
 
+           
             <form class="login-form" action="{{ url('/register') }}" method="POST">
                 @csrf
 
+                <!-- NAME -->
                 <div class="input-field">
                     <label>Name</label>
-                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Your name">
+
+                    @error('name')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
+                <!-- EMAIL -->
                 <div class="input-field">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="name@example.com" required>
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com">
+
+                    @error('email')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
+                <!-- PASSWORD -->
                 <div class="input-field">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="••••••••" required>
+                    <input type="password" name="password" placeholder="••••••••">
+
+                    @error('password')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
+                <!-- CONFIRM PASSWORD -->
                 <div class="input-field">
                     <label>Confirm Password</label>
-                    <input type="password" name="password_confirmation" placeholder="••••••••" required>
+                    <input type="password" name="password_confirmation" placeholder="••••••••">
+
+                    @error('password_confirmation')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <button type="submit" class="signin-btn">Create Account</button>
