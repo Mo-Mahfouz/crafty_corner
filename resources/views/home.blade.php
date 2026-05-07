@@ -17,13 +17,13 @@
 <!-- NAVBAR -->
 <header class="navbar sticky-top">
     <div class="container-fluid px-md-5">
-        <nav class="nav-links d-none d-lg-flex gap-4">
+        <nav class="nav-links  d-lg-flex gap-4">
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('collection') }}">Collection</a>
         </nav>
 
-        <a href="{{ route('home') }}" class="logo mx-auto mx-lg-0">
-            <span class="logo-icon">◇</span> Nourhan Store
+        <a href="{{ route('home') }}" class="logo mx-auto mx-lg-0 d-none d-md-block">
+            <span class="  logo-icon">◇</span> Nourhan Store
         </a>
 
         <div class="nav-right d-flex align-items-center gap-2">
@@ -49,7 +49,7 @@
                     meticulous craftsmanship designed for your most precious moments.
                 </p>
                 <div class="hero-btns d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-5">
-                    <a href="{{ route('collection') }}" class="btn-primary link-offset-2 link-underline link-underline-opacity-0">Explore Collection →</a>
+                    <a href="{{ route('collection') }}" class="btn btn-b text-white px-4 py-2 rounded-2 link-offset-2 link-underline link-underline-opacity-0">Explore Collection →</a>
                     <a href="{{ route('ourstory') }}" class="btn-outline text-black  link-offset-2 link-underline link-underline-opacity-0">Our Story</a>
                 </div>
                 <div class="hero-stats d-flex justify-content-center justify-content-lg-start gap-4 pt-4 border-top">
@@ -140,25 +140,25 @@
 <footer class="footer border-top  bg-white pt-5 pb-3">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-5 footer-brand text-center text-lg-start">
+            <div class="col-sm-12 col-md-6 col-lg-4 footer-brand text-center text-lg-start">
                 <h3 class="mb-3">Nourhan Store</h3>
                 <p class="text-black opacity-50" >Elevating your everyday style with curated collections.</p>
             </div>
-            <div class="col-md-3 col-lg-3 footer-col">
-                <h4 class="mb-4 ">Shop</h4>
-                <ul class="d-flex flex-column p-0 ">
+            <div class="col-sm-12 col-md-6 col-lg-4 footer-col ps-5 d-flex d-md-block flex-column justify-content-center align-items-center">
+                <h4 class="mb-4 pe-5">Shop</h4>
+                <ul class="d-flex flex-column p-0" >
                     <a class="text-black  link-offset-2 link-underline link-underline-opacity-0 opacity-50 mb-2" href="{{ route('home') }}">Home</a>
                     <a class="text-black  link-offset-2 link-underline link-underline-opacity-0 opacity-50" href="{{ route('collection') }}">All Collections</a>
                 </ul>
             </div>
-            <div class="col-md-6 col-lg-4 footer-col">
+            <div class="col-sm-12 col-md-12 col-lg-4 footer-col">
                 <h4 class="mb-4">Support / Contact</h4>
                 <form action="{{ route('contact.store') }}" method="POST" class="d-flex flex-column gap-2">
                     @csrf
                     <input type="text" name="name" class="form-control" placeholder="Your Name">
                     <input type="email" name="email" class="form-control" placeholder="Your Email">
                     <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn-primary w-100 justify-content-center">Send</button>
+                    <button type="submit" class="btn btn-b text-white px-4 py-2 rounded-2 w-100 justify-content-center">Send</button>
                 </form>
             </div>
         </div>
