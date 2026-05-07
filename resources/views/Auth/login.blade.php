@@ -18,7 +18,6 @@
 
         <!-- LEFT SIDE -->
         <div class="story-area">
-
             <div class="tagline">
                 <h2>Curating Timeless Elegance</h2>
                 <p>Welcome back to Nourhan Store — continue your journey in refined fashion.</p>
@@ -36,7 +35,6 @@
                 <span>fast checkout</span>
                 <span>premium access</span>
             </div>
-
         </div>
 
         <!-- RIGHT SIDE -->
@@ -48,23 +46,33 @@
             <form class="login-form" action="{{ url('/login') }}" method="POST">
                 @csrf
 
+                <!-- EMAIL -->
                 <div class="input-field">
                     <label>Email</label>
-                    <input type="email" name="email" placeholder="name@example.com" required>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        value="{{ old('email') }}" 
+                        placeholder="name@example.com"
+                    >
+
+                    @error('email')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
+                <!-- PASSWORD -->
                 <div class="input-field">
                     <label>Password</label>
-                    <input type="password" name="password" placeholder="••••••••" required>
-                </div>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="••••••••"
+                    >
 
-                <div class="row-remember">
-                    <label class="checkbox-item">
-                        <input type="checkbox" name="remember">
-                        <span>Remember me</span>
-                    </label>
-
-                    <a href="#" class="forgot-pass">Forgot password?</a>
+                    @error('password')
+                        <span style="color:red; font-size:12px;">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <button type="submit" class="signin-btn">Sign In</button>
