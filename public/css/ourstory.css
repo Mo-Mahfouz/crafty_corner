@@ -25,15 +25,21 @@
 }
 
 /* BUTTON */
-.btn-custom {
-  background: #f8f6f2;
-  border: 1px solid #e5ded4;
-  color: #1a1208;
-  transition: all 0.3s ease;
-}
 
-.btn-custom:hover {
-  border-color: #c9914a;
-  color: #c9914a;
-  background: white;
+
+.btn-outline-succes {
+    --bs-btn-color: #c9914a;
+    --bs-btn-border-color: #c9914a;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #c9914a;
+    --bs-btn-hover-border-color: #c9914a;
+    --bs-btn-focus-shadow-rgb: 25, 135, 84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #c9914a;
+    --bs-btn-active-border-color: #c9914a;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #c9914a;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #c9914a;
+    --bs-gradient: none;
 }

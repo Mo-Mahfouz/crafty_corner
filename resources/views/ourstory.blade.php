@@ -66,7 +66,7 @@
                     Our goal is to bring warmth, softness, and meaning into every home.
                 </p>
 
-                <a href="{{ route('home') }}" class="btn btn-outline-success border rounded-pill px-4 py-2 btn-custom">
+                <a href="{{ route('home') }}" class="btn btn-outline-succes border rounded-pill px-4 py-2 btn-custom">
                     Back to Home
                 </a>
 
@@ -101,7 +101,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Your Name">
                     <input type="email" name="email" class="form-control" placeholder="Your Email">
                     <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn-outline-success w-100 justify-content-center">Send</button>
+                    <button type="submit" class="btn btn-outline-succes border w-100 justify-content-center">Send</button>
                 </form>
             </div>
         </div>
