@@ -42,7 +42,7 @@ class ProductsController extends Controller
     }
     public function filterByCategoryAllProducts()
     {
-        return ('all');
+        return view('layouts.collections');
     }
 
 }
