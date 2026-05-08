@@ -73,69 +73,82 @@
     <section class="products-grid">
 
         <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co1.png') }}" alt="Lace Heirloom Gown">
-            </div>
+            <a href="{{ route('collection.baby_clothes') }}">
+                <div class="product-img">
+                    <img src="{{ asset('images/co1.png') }}" alt="Lace Heirloom Gown">
+                </div>
 
-            <div class="product-info">
-                <span class="product-cat">BABY CLOTHES</span>
-                <h3>Lace Heirloom Gown</h3>
-            </div>
+                <div class="product-info">
+                    <span class="product-cat">BABY CLOTHES</span>
+                    <h3>Lace Heirloom Gown</h3>
+                </div>
+            </a>
         </div>
 
         <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co2.png') }}" alt="Floral Silk Cushion">
-            </div>
+            <a href="{{ route('collection.embroidery') }}">
+                <div class="product-img">
+                    <img src="{{ asset('images/co2.png') }}" alt="Floral Silk Cushion">
+                </div>
 
-            <div class="product-info">
-                <span class="product-cat">EMBROIDERY</span>
-                <h3>Floral Silk Cushion</h3>
-            </div>
+                <div class="product-info">
+                    <span class="product-cat">EMBROIDERY</span>
+                    <h3>Floral Silk Cushion</h3>
+                </div>
+            </a>
         </div>
 
         <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co3.png') }}" alt="Newborn Welcome Set">
-            </div>
+            <a href="{{ route('collection.gifts') }}">
+                <div class="product-img">
+                    <img src="{{ asset('images/co3.png') }}" alt="Newborn Welcome Set">
+                </div>
 
-            <div class="product-info">
-                <span class="product-cat">GIFTS</span>
-                <h3>Newborn Welcome Set</h3>
-            </div>
+                <div class="product-info">
+                    <span class="product-cat">GIFTS</span>
+                    <h3>Newborn Welcome Set</h3>
+                </div>
+            </a>
+        </div>
+        <a href="{{ route('collection.baby_clothes') }}"></a>
+        <div class="product-card">
+            <a href="{{ route('collection.baby_clothes') }}">
+                <div class="product-img">
+                    <img src="{{ asset('images/co4.png') }}" alt="Velvet Ribbon Bonnet">
+                </div>
+
+                <div class="product-info">
+                    <span class="product-cat">BABY CLOTHES</span>
+                    <h3>Velvet Ribbon Bonnet</h3>
+                </div>
+            </a>
         </div>
 
         <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co4.png') }}" alt="Velvet Ribbon Bonnet">
-            </div>
+            <a href="{{ route('collection.embroidery') }}">
+                <div class="product-img">
+                    <img src="{{ asset('images/co5.png') }}" alt="Botanical Wall Hoop">
+                </div>
 
-            <div class="product-info">
-                <span class="product-cat">BABY CLOTHES</span>
-                <h3>Velvet Ribbon Bonnet</h3>
-            </div>
+                <div class="product-info">
+                    <span class="product-cat">EMBROIDERY</span>
+                    <h3>Botanical Wall Hoop</h3>
+                </div>
+            </a>
         </div>
 
         <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co5.png') }}" alt="Botanical Wall Hoop">
-            </div>
+            <a href="{{ route('collection.gifts') }}">
 
-            <div class="product-info">
-                <span class="product-cat">EMBROIDERY</span>
-                <h3>Botanical Wall Hoop</h3>
-            </div>
-        </div>
+                <div class="product-img">
+                    <img src="{{ asset('images/co6.png') }}" alt="Linen Tea Towel Set">
+                </div>
 
-        <div class="product-card">
-            <div class="product-img">
-                <img src="{{ asset('images/co6.png') }}" alt="Linen Tea Towel Set">
-            </div>
-
-            <div class="product-info">
-                <span class="product-cat">GIFTS</span>
-                <h3>Linen Tea Towel Set</h3>
-            </div>
+                <div class="product-info">
+                    <span class="product-cat">GIFTS</span>
+                    <h3>Linen Tea Towel Set</h3>
+                </div>
+            </a>
         </div>
 
     </section>
