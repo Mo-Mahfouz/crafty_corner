@@ -7,11 +7,13 @@
     <title>Our Collection – Nourhan Store</title>
 
     <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/collection.css') }}" />
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet" />
+
 </head>
 
 <body>
@@ -23,8 +25,8 @@
             <a href="{{ route('collection') }}" class="active">Collection</a>
         </nav>
 
-        <a href="{{ route('home') }}" class="logo">
-            <span class="logo-icon">◇</span> Nourhan Store
+        <a href="{{ route('home') }}" class="logo d-sm-none d-md-inline-block">
+            <span class="logo-icon ">◇</span> Nourhan Store
         </a>
 
         <div class="nav-right">
@@ -50,7 +52,7 @@
     <!-- FILTERS -->
     <section class="filters-bar">
 
-        <div class="filter-tabs">
+        <div class="filter-tabs  d-flex justify-content-center align-items-center container">
             <a href="{{ route('collection') }}" class="tab {{ !isset($category) ? 'active' : '' }}">All</a>
 
             <a href="{{ route('collection.baby_clothes') }}"
@@ -70,9 +72,9 @@
     </section>
 
     <!-- PRODUCTS GRID -->
-    <section class="products-grid">
-
-        <div class="product-card">
+    <section class="products-grid container">
+    <div class="row">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12  ">
             <a href="{{ route('collection.baby_clothes') }}">
                 <div class="product-img">
                     <img src="{{ asset('images/co1.png') }}" alt="Lace Heirloom Gown">
@@ -84,8 +86,7 @@
                 </div>
             </a>
         </div>
-
-        <div class="product-card">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12">
             <a href="{{ route('collection.embroidery') }}">
                 <div class="product-img">
                     <img src="{{ asset('images/co2.png') }}" alt="Floral Silk Cushion">
@@ -97,8 +98,7 @@
                 </div>
             </a>
         </div>
-
-        <div class="product-card">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12">
             <a href="{{ route('collection.gifts') }}">
                 <div class="product-img">
                     <img src="{{ asset('images/co3.png') }}" alt="Newborn Welcome Set">
@@ -110,8 +110,7 @@
                 </div>
             </a>
         </div>
-        <a href="{{ route('collection.baby_clothes') }}"></a>
-        <div class="product-card">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12">
             <a href="{{ route('collection.baby_clothes') }}">
                 <div class="product-img">
                     <img src="{{ asset('images/co4.png') }}" alt="Velvet Ribbon Bonnet">
@@ -123,8 +122,7 @@
                 </div>
             </a>
         </div>
-
-        <div class="product-card">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12">
             <a href="{{ route('collection.embroidery') }}">
                 <div class="product-img">
                     <img src="{{ asset('images/co5.png') }}" alt="Botanical Wall Hoop">
@@ -136,8 +134,7 @@
                 </div>
             </a>
         </div>
-
-        <div class="product-card">
+        <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12">
             <a href="{{ route('collection.gifts') }}">
 
                 <div class="product-img">
@@ -150,7 +147,7 @@
                 </div>
             </a>
         </div>
-
+    </div>
     </section>
 
     <!-- DISCOVER MORE -->
@@ -161,9 +158,9 @@
     </div>
 
     <!-- HERITAGE BANNER -->
-    <section class="heritage-banner">
+    <section class="heritage-banner row ">
 
-        <div class="heritage-text">
+        <div class="heritage-text col-md-6 col-sm-12">
             <span class="badge-tag">Limited Availability</span>
 
             <h2>
@@ -182,8 +179,8 @@
             </a>
         </div>
 
-        <div class="heritage-img">
-            <img src="{{ asset('images/coLast.png') }}" alt="Handmade lace craft">
+        <div class="heritage-img col-md-6 col-sm-12 ">
+            <img src="{{ asset('images/coLast.png') }}" class="rounded-2" alt="Handmade lace craft">
         </div>
 
     </section>
@@ -191,21 +188,21 @@
     <!-- FOOTER -->
     <footer class="footer">
 
-        <div class="footer-top">
+        <div class=" row">
 
-            <div class="footer-brand">
+            <div class="footer-brand col-lg-4 col-md-6 col-sm-12 ">
                 <h3>Nourhan Store</h3>
                 <p>Elevating your everyday style with curated collections.</p>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col col-lg-4 col-md-6 col-sm-12 ">
                 <h4>Shop</h4>
 
                 <a href="{{ route('home') }}">Home</a>
                 <a href="{{ route('collection') }}">All Collections</a>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col col-lg-4 col-md-12 col-sm-12">
                 <h4>Support</h4>
 
                 <form action="{{ route('contact.store') }}" method="POST">
