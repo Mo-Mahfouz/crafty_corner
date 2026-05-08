@@ -47,6 +47,18 @@ Route::get('/collection', function () {
     return view('collection');
 })->name('collection');
 
+Route::get('/collection/baby-clothes', [ProductsController::class, 'filterByCategoryBabyClothes'])
+    ->name('collection.baby_clothes');
+
+Route::get('/collection/embroidery', [ProductsController::class, 'filterByCategoryEmbroidery'])
+    ->name('collection.embroidery');
+
+Route::get('/collection/gifts', [ProductsController::class, 'filterByCategoryGifts'])
+    ->name('collection.gifts');
+
+Route::get('/collection/custom-orders', [ProductsController::class, 'filterByCategoryCustomOrders'])
+    ->name('collection.custom_orders');
+
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
 Route::get('productdetails/{id}/checkout', [CheckoutController::class, 'index'])->name('checkout.index');

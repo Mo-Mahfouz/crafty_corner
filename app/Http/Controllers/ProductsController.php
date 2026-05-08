@@ -7,14 +7,38 @@ use App\Models\Product;
 
 class ProductsController extends Controller
 {
-
     public function index()
     {
-        return view('Products.productGrid');
+        $products = Product::all();
+        return view('Products.productGrid', compact('products'));
     }
+
+    public function filterByCategory($category)
+    {
+        $products = Product::where('category', $category)->get();
+        return view('Products.productGrid', compact('products', 'category'));
+    }
+
     public function productDetails($id)
     {
-        return view('Products.productDetails');
+        $product = Product::findOrFail($id);
+        return view('Products.productDetails', compact('product'));
     }
- 
+    public function filterByCategoryBabyClothes()
+    {
+        return ('baby_clothes');
+    }
+    public function filterByCategoryEmbroidery()
+    {
+        return ('embroidery');
+    }
+    public function filterByCategoryGifts()
+    {
+        return ('gifts');
+    }
+    public function filterByCategoryCustomOrders()
+    {
+        return ('custom_orders');
+    }
+
 }
