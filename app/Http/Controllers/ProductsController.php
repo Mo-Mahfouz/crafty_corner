@@ -45,6 +45,12 @@ class ProductsController extends Controller
         return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
     }
 
+    public function showBabyClothesProduct($id)
+    {
+        $product = baby_clothes_product::findOrFail($id);
+        return view('collection.productDetails', compact('product'));
+    }
+
 
 
 }

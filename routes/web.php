@@ -59,6 +59,8 @@ Route::get('/collection/gifts', [ProductsController::class, 'filterByCategoryGif
 Route::get('/collection/custom-orders', [ProductsController::class, 'filterByCategoryCustomOrders'])
     ->name('collection.custom_orders');
 
+Route::get('/collection/baby-clothes/{item}', [ProductsController::class, 'showBabyClothesProduct'])
+    ->name('collection.baby_clothes.show');
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
 Route::get('productdetails/{id}/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
