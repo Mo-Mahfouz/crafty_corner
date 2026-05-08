@@ -70,7 +70,7 @@
     </section>
 
     <!-- PRODUCTS GRID -->
-    <section class="products-grid container">
+    <section class="products-grid container pb-5">
     <div class="row">
         <div link="{{ route('collection.baby_clothes') }}" class="product-card col-md-6 col-lg-4 col-sm-12  ">
             <a href="{{ route('collection.baby_clothes') }}">
