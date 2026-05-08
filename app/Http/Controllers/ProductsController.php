@@ -36,9 +36,7 @@ class ProductsController extends Controller
     {
         return ('gifts');
     }
-    public function filterByCategoryCustomOrders()
-    {
-        return ('custom_orders');
-    }
+
+
 
 }
