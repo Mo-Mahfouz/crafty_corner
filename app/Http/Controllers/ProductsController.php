@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-
+use App\Models\baby_clothes_product;
+use App\Models\Embroidery;
+use App\Models\Gift;
 class ProductsController extends Controller
 {
     public function index()
@@ -26,15 +28,21 @@ class ProductsController extends Controller
     }
     public function filterByCategoryBabyClothes()
     {
-        return ('baby_clothes');
+        $productsFromDb = baby_clothes_product::all();
+        $sectionName = 'Baby Clothes';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
     }
     public function filterByCategoryEmbroidery()
     {
-        return ('embroidery');
+        $productsFromDb = Embroidery::all();
+        $sectionName = 'Embroidery';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
     }
     public function filterByCategoryGifts()
     {
-        return ('gifts');
+        $productsFromDb = Gift::all();
+        $sectionName = 'Gifts';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
     }
 
 
