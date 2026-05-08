@@ -47,6 +47,9 @@ Route::get('/collection', function () {
     return view('collection');
 })->name('collection');
 
+Route::get('/collection/all-products', [ProductsController::class, 'filterByCategoryAllProducts'])
+    ->name('collection.all_products');
+
 Route::get('/collection/baby-clothes', [ProductsController::class, 'filterByCategoryBabyClothes'])
     ->name('collection.baby_clothes');
 

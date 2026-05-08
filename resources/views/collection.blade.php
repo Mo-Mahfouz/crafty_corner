@@ -155,7 +155,7 @@
 
     <!-- DISCOVER MORE -->
     <div class="discover-more">
-        <a href="{{ route('collection') }}" class="btn-outline">
+        <a href="{{ route('collection.all_products') }}" class="btn-outline">
             Discover More Pieces →
         </a>
     </div>
