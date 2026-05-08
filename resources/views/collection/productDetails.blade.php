@@ -12,7 +12,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="margin-top: 100px;">
     <header
         class="px-5 py-3 d-flex justify-content-between align-items-center border border-white py-2 fixed-top bg-white">
         <a class="a text-decoration-none" href="">Shop</a>
