@@ -62,8 +62,6 @@
             <a href="{{ route('collection.gifts') }}"
                 class="tab {{ isset($category) && $category == 'gifts' ? 'active' : '' }}">Gifts</a>
 
-            <a href="{{ route('collection.custom_orders') }}"
-                class="tab {{ isset($category) && $category == 'custom_orders' ? 'active' : '' }}">Custom Orders</a>
         </div>
         <div class="filter-right"></div>
 
