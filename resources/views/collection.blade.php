@@ -152,14 +152,6 @@
         </div>
 
     </section>
-
-    <!-- DISCOVER MORE -->
-    <div class="discover-more">
-        <a href="{{ route('collection.all_products') }}" class="btn-outline">
-            Discover More Pieces →
-        </a>
-    </div>
-
     <!-- HERITAGE BANNER -->
     <section class="heritage-banner">
 

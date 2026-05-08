@@ -40,9 +40,6 @@ class ProductsController extends Controller
     {
         return ('custom_orders');
     }
-    public function filterByCategoryAllProducts()
-    {
-        return view('layouts.collections');
-    }
+
 
 }
