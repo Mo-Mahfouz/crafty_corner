@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Nourhan Store | Lace Heirloom Gowns</title>
+    <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/categoryItems.css') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
+<!-- we have
+1-section title
+2-product image
+3-product name
+4-product price
+5-product short description
+6-link to details page 
+for each product             
+        -->
 
 <body>
     <!-- HEADER -->
@@ -24,21 +33,20 @@
     <main>
         <section class="products-section">
             <div class="container">
-                <h2 class="section-title">Lace Heirloom Gown</h2>
+                <h2 class="section-title">@yield('section-title')</h2>
 
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-cristian-rojas-8459409.jpg" alt="Vintage Bloom Gown"
-                                class="product-image" />
+                            @yield('product1-image')
+                            class="product-image" />
                         </div>
+
                         <div class="product-info">
-                            <h3 class="product-name">Vintage Bloom Gown</h3>
-                            <div class="price">79.99</div>
+                            <h3 class="product-name">@yield('product1-name')</h3>
+                            <div class="price">@yield('product1-price')</div>
                             <p class="short-description">
-                                A blend of classic charm and handcrafted lace florals,
-                                designed for moments when you want to stand out with quiet
-                                elegance.
+                                @yield('product1-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
@@ -46,15 +54,14 @@
 
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-elif-su-alagoz-407274941-15100209.jpg" alt="Timeless Romance Gown"
-                                class="product-image" />
+                            @yield('product2-image')
+                            class="product-image" />
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Timeless Romance Gown</h3>
-                            <div class="price">49.49</div>
+                            <h3 class="product-name">@yield('product2-name')</h3>
+                            <div class="price">@yield('product2-price')</div>
                             <p class="short-description">
-                                A forever piece that captures romance and handmade lace
-                                artistry, perfect for unforgettable and meaningful moments.
+                                @yield('product2-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
@@ -62,16 +69,13 @@
 
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-jol-torongo-2158049937-35124045.jpg" alt="Little Angel Lace Dress"
-                                class="product-image" />
+                            @yield('product3-image')
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Little Angel Lace Dress</h3>
-                            <div class="price">189.99</div>
+                            <h3 class="product-name">@yield('product3-name')</h3>
+                            <div class="price">@yield('product3-price')</div>
                             <p class="short-description">
-                                A soft handmade lace dress designed for little ones, full of
-                                innocence and charm with delicate details that feel like a
-                                fairytale come to life.
+                                @yield('product3-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
@@ -79,16 +83,13 @@
 
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-jonathan-valdes-286676880-33699921.jpg" alt="Soft Grace Heirloom"
-                                class="product-image" />
+                            @yield('product4-image')
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Soft Grace Heirloom</h3>
-                            <div class="price">34.95</div>
+                            <h3 class="product-name">@yield('product4-name')</h3>
+                            <div class="price">@yield('product4-price')</div>
                             <p class="short-description">
-                                A beautifully handcrafted piece that highlights simplicity and
-                                elegance, giving a refined and graceful presence without
-                                effort.
+                                @yield('product4-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
@@ -96,16 +97,14 @@
 
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-luisbecerrafotografo-5906140.jpg" alt="Sweet Blossom Kids Gown"
-                                class="product-image" />
+                            @yield('product5-image')
+                            class="product-image" />
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Sweet Blossom Kids Gown</h3>
-                            <div class="price">129.00</div>
+                            <h3 class="product-name">@yield('product5-name')</h3>
+                            <div class="price">@yield('product5-price')</div>
                             <p class="short-description">
-                                A gentle lace gown made with love, featuring handmade details
-                                that bring a soft, elegant, and playful touch perfect for
-                                special moments.
+                                @yield('product5-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
@@ -113,16 +112,13 @@
 
                     <div class="product-card">
                         <div class="product-img">
-                            <img src="pexels-magda-ehlers-pexels-34846680.jpg" alt="Pearl Lace Elegance"
-                                class="product-image" />
+                            @yield('product6-image')
                         </div>
                         <div class="product-info">
-                            <h3 class="product-name">Pearl Lace Elegance</h3>
-                            <div class="price">59.90</div>
+                            <h3 class="product-name">@yield('product6-name')</h3>
+                            <div class="price">@yield('product6-price')</div>
                             <p class="short-description">
-                                Inspired by the purity of pearls, this gown showcases
-                                intricate lace work that reflects soft luxury and timeless
-                                beauty.
+                                @yield('product6-description')
                             </p>
                             <a href="details.html" class="details-link">More Details</a>
                         </div>
