@@ -28,25 +28,21 @@
 
     <main class="product-page row container m-auto">
         <section class="product-gallery col-md-6">
-            <img src="baby in sweater.PNG" alt="Baby Sweater" class="main-image" />
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="main-image" />
             <div class="thumbnails d-flex gap-3 mt-3">
-                <img src="first image.PNG" alt="Thumbnail 1" />
-                <img src="second image.PNG" alt="Thumbnail 2" />
-                <img src="third image.PNG" alt="Thumbnail 3" />
+                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 1" />
+                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 2" />
+                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 3" />
             </div>
         </section>
 
         <section class="product-info col-md-6">
             <p class="breadcrumb mt-2">COLLECTION / BABY ESSENTIALS / KNITWEAR</p>
-            <h1 class="fs-1 mb-3">Hand-Knitted<br />Heirloom Sweater</h1>
+            <h1 class="fs-1 mb-3">{{ $product->name }}</h1>
             <div class="fs-5 text-m mb-2">
-                $124.00 <span class="fs-6 text-m p-1">In Stock</span>
+                ${{ $product->price }} <span class="fs-6 text-m p-1">In Stock</span>
             </div>
-            <p class="opacity-75">
-                A timeless piece crafted with the utmost care. This heirloom-quality
-                sweater features intricate cable knit patterns and is handmade by
-                master artisans.
-            </p>
+            <p class="opacity-75">{{ $product->description }}</p>
 
             <div class="option-group mb-3">
                 <h4>Colour: Cream</h4>
