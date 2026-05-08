@@ -30,24 +30,39 @@ class ProductsController extends Controller
     {
         $productsFromDb = baby_clothes_product::all();
         $sectionName = 'Baby Clothes';
-        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
+        $detailsRoute = 'collection.baby_clothes.show';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName', 'detailsRoute'));
     }
+
     public function filterByCategoryEmbroidery()
     {
         $productsFromDb = Embroidery::all();
         $sectionName = 'Embroidery';
-        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
+        $detailsRoute = 'collection.embroidery.show';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName', 'detailsRoute'));
     }
+
     public function filterByCategoryGifts()
     {
         $productsFromDb = Gift::all();
         $sectionName = 'Gifts';
-        return view('collection.categoryItems', compact('productsFromDb', 'sectionName'));
+        $detailsRoute = 'collection.gifts.show';
+        return view('collection.categoryItems', compact('productsFromDb', 'sectionName', 'detailsRoute'));
     }
-
     public function showBabyClothesProduct($id)
     {
         $product = baby_clothes_product::findOrFail($id);
+        return view('collection.productDetails', compact('product'));
+    }
+    public function showEmbroideryProduct($id)
+    {
+        $product = Embroidery::findOrFail($id);
+        return view('collection.productDetails', compact('product'));
+    }
+
+    public function showGiftProduct($id)
+    {
+        $product = Gift::findOrFail($id);
         return view('collection.productDetails', compact('product'));
     }
 
