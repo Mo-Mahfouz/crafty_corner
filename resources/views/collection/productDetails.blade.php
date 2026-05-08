@@ -28,11 +28,11 @@
 
     <main class="product-page row container m-auto">
         <section class="product-gallery col-md-6">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="main-image" />
+            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="main-image" />
             <div class="thumbnails d-flex gap-3 mt-3">
-                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 1" />
-                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 2" />
-                <img src="{{ asset('storage/' . $product->image) }}" alt="Thumbnail 3" />
+                <img src="{{ asset($product->image) }}" alt="Thumbnail 1" />
+                <img src="{{ asset($product->image) }}" alt="Thumbnail 2" />
+                <img src="{{ asset($product->image) }}" alt="Thumbnail 3" />
             </div>
         </section>
 
