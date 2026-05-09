@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\AccountController;
 
 
 
@@ -79,4 +81,12 @@ Route::middleware('auth')->group(function () {
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');
 Route::get('productdetails/{id}/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard/activity-logs', [ActivityLogController::class, 'index'])->name('dashboard.activity_logs');
+    Route::get('/dashboard/account', [AccountController::class, 'index'])->name('dashboard.account'); // ✅
+    Route::post('/dashboard/account', [AccountController::class, 'update'])->name('dashboard.account.update'); // ✅
+});

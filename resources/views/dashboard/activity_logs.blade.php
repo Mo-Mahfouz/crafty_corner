@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Activity Logs - Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -53,41 +53,36 @@
             border: 1px solid #eee;
         }
 
-        .status {
+        .badge-login {
+            background: #e6f7ee;
+            color: #2f855a;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 12px;
         }
 
-        .blue {
-            background: #e6f0ff;
-            color: #2b6cb0;
-        }
-
-        .green {
-            background: #e6f7ee;
-            color: #2f855a;
-        }
-
-        .orange {
-            background: #fff4e5;
-            color: #c05621;
-        }
-
-        .red {
+        .badge-logout {
             background: #fde8e8;
             color: #c53030;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
         }
 
-        .main-btn {
-            background: var(--main);
-            color: #fff;
-            border: none;
+        .badge-register {
+            background: #e6f0ff;
+            color: #2b6cb0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
         }
 
-        .main-btn:hover {
-            background: #b88a5c;
-            color: #fff;
+        .badge-order {
+            background: #fff4e5;
+            color: #c05621;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -111,8 +106,8 @@
 
             <!-- Sidebar -->
             <div class="col-md-2 sidebar p-3">
-                <a href="{{ route('dashboard.index') }}" class="active">Orders</a>
-                <a href="{{ route('dashboard.activity_logs') }}">Activity Logs</a>
+                <a href="{{ route('dashboard.index') }}">Orders</a>
+                <a href="{{ route('dashboard.activity_logs') }}" class="active">Activity Logs</a>
                 <a href="{{ route('dashboard.account') }}">Account</a>
                 <div class="mt-5">
                     <form method="POST" action="{{ route('logout') }}">
@@ -126,32 +121,9 @@
             <div class="col-md-10 p-4">
 
                 <!-- Header -->
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div>
-                        <h3>Orders Management</h3>
-                        <small class="text-muted">Manage and track all purchases</small>
-                    </div>
-                    <div class="d-flex gap-2">
-                        <input class="form-control" style="width:280px; border-radius:20px;"
-                            placeholder="Search by ID or Customer">
-                        <button class="btn btn-light">Filters</button>
-                    </div>
-                </div>
-
-                <!-- Stats -->
-                <div class="row mb-4">
-                    <div class="col-md-3">
-                        <div class="card-box text-center">
-                            <h6 class="text-muted">Total Orders</h6>
-                            <h3>{{ $totalOrders }}</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card-box text-center">
-                            <h6 class="text-muted">Total Users</h6>
-                            <h3>{{ $totalUsers }}</h3>
-                        </div>
-                    </div>
+                <div class="mb-4">
+                    <h3>Activity Logs</h3>
+                    <small class="text-muted">Track all actions happening in the system</small>
                 </div>
 
                 <!-- Table -->
@@ -159,31 +131,38 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Order</th>
-                                <th>Customer</th>
-                                <th>Items</th>
-                                <th>Total</th>
-                                <th>Status</th>
+                                <th>#</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Description</th>
+                                <th>IP Address</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($orders as $order)
+                            @forelse($logs as $log)
                                 <tr>
-                                    <td>#{{ $order->id }}</td>
-                                    <td>{{ $order->user->name ?? 'N/A' }}</td>
-                                    <td>{{ $order->quantity }}</td>
-                                    <td>EGP {{ number_format($order->total_price, 2) }}</td>
+                                    <td>{{ $log->id }}</td>
+                                    <td>{{ $log->user->name ?? 'N/A' }}</td>
                                     <td>
-                                        <span class="status blue">Pending</span>
+                                        <span class="badge-{{ $log->action }}">{{ ucfirst($log->action) }}</span>
                                     </td>
+                                    <td>{{ $log->description }}</td>
+                                    <td>{{ $log->ip_address }}</td>
+                                    <td>{{ $log->created_at->diffForHumans() }}</td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" class="text-center text-muted">No orders yet</td>
+                                    <td colspan="6" class="text-center text-muted">No activity yet</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
+
+                    <!-- Pagination -->
+                    <div class="mt-3">
+                        {{ $logs->links() }}
+                    </div>
                 </div>
 
             </div>
