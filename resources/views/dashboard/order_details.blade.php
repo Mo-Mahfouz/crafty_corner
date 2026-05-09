@@ -112,7 +112,7 @@
     <!-- Navbar -->
     <nav class="navbar px-4 d-flex justify-content-between align-items-center py-2">
         <div class="d-flex gap-3"><span>Shop</span><span>Admin</span></div>
-        <div class="logo">◇ Crafty Corner</div>
+        <div class="logo">◇ sšr</div>
         <div><span>👤 {{ Auth::user()->name }}</span></div>
     </nav>
 

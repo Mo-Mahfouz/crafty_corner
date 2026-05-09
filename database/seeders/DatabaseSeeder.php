@@ -2,15 +2,15 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // ✅ Admin User
+        // ✅ Users
         User::create([
             'name' => 'Admin',
             'email' => 'admin@craftycorner.com',
@@ -18,12 +18,19 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        // ✅ Test User عادي
         User::create([
             'name' => 'Test User',
             'email' => 'test@craftycorner.com',
             'password' => Hash::make('user123'),
             'role' => 'user',
+        ]);
+
+        // ✅ باقي البيانات
+        $this->call([
+            ProductSeeder::class,
+            BabyClothesSeeder::class,
+            EmbroiderySeeder::class,
+            GiftSeeder::class,
         ]);
     }
 }

@@ -100,7 +100,7 @@
             <span>Shop</span>
             <span>Admin</span>
         </div>
-        <div class="logo">◇ Crafty Corner</div>
+        <div class="logo">◇ sšr</div>
         <div class="d-flex gap-3 align-items-center">
             <span>👤 {{ Auth::user()->name }}</span>
         </div>

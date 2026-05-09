@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Checkout - Crafty Corner</title>
+    <title>Checkout - sšr</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -114,7 +114,7 @@
                         <div class="section-title">📦 Your Selection</div>
                         @foreach($cartItems as $item)
                             <div class="d-flex align-items-center gap-3 mb-3">
-                                <img src="{{ asset('storage/' . $item->image) }}" class="item-img">
+                                <img src="{{ asset($item->image) }}" class="item-img">
                                 <div class="flex-grow-1">
                                     <div>{{ $item->name }}</div>
                                     <small class="text-muted">Qty: {{ $item->quantity }}</small>
@@ -145,7 +145,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label class="form-label">Phone Number</label>
+                                <label class="form-label">Phone Number (V.Cash)</label>
                                 <input type="text" name="phone"
                                     class="form-control @error('phone') is-invalid @enderror"
                                     placeholder="+20 000 000 0000" value="{{ old('phone') }}">
@@ -163,7 +163,7 @@
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label text-muted">Order Notes (optional)</label>
+                                <label class="form-label text-muted">Order Notes (optional | instapay username)</label>
                                 <textarea name="notes" class="form-control" rows="3"
                                     placeholder="Special requests, gift messages, or delivery instructions...">{{ old('notes') }}</textarea>
                             </div>

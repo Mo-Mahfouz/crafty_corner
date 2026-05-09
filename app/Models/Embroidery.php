@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Embroidery extends Model
 {
-    protected $fillable = ['name', 'image', 'price', 'description'];
+    protected $table = 'embroidery';
 
+    protected $fillable = ['name', 'image', 'price', 'description'];
 }
