@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\CartController;
 
 
 
@@ -67,6 +67,14 @@ Route::get('/collection/embroidery/{id}', [ProductsController::class, 'showEmbro
 
 Route::get('/collection/gifts/{id}', [ProductsController::class, 'showGiftProduct'])
     ->name('collection.gifts.show');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+});
 
 Route::get('/productgrid', [ProductsController::class, 'index'])->name('product.index');
 Route::get('/productdetails/{id}', [ProductsController::class, 'productDetails'])->name('product.show');

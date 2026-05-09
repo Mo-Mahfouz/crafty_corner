@@ -13,6 +13,17 @@
 </head>
 
 <body style="margin-top: 100px;">
+    @if(session('success'))
+        <div class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 px-5 py-3 rounded-3 shadow"
+            style="z-index:9999; background:#d4edda; color:#155724; border:1px solid #c3e6cb;">
+            ✔ {{ session('success') }}
+        </div>
+        <script>
+            setTimeout(() => {
+                document.querySelector('.alert').style.display = 'none';
+            }, 3000);
+        </script>
+    @endif
     <header
         class="px-5 py-3 d-flex justify-content-between align-items-center border border-white py-2 fixed-top bg-white">
         <a class="a text-decoration-none" href="">Shop</a>
@@ -70,9 +81,17 @@
                     <button class="bg-white rounded-2 border-1 px-3 fs-6">+</button>
                 </div>
 
-                <button class="add-cart bg-m text-white border-0 px-2 py-3 rounded-2 w-100">
-                    Add to Cart
-                </button>
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <input type="hidden" name="product_type" value="{{ $productType }}">
+                    <input type="hidden" name="name" value="{{ $product->name }}">
+                    <input type="hidden" name="image" value="{{ $product->image }}">
+                    <input type="hidden" name="price" value="{{ $product->price }}">
+                    <button type="submit" class="add-cart bg-m text-white border-0 px-2 py-3 rounded-2 w-100">
+                        Add to Cart
+                    </button>
+                </form>
 
                 <div class="action-icons">
                     <button class="border-1 bg-white rounded-2 fs-6">

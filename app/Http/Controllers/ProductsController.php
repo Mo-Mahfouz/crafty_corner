@@ -52,18 +52,22 @@ class ProductsController extends Controller
     public function showBabyClothesProduct($id)
     {
         $product = baby_clothes_product::findOrFail($id);
-        return view('collection.productDetails', compact('product'));
+        $productType = 'baby_clothes'; // 👈 بس السطر ده
+        return view('collection.productDetails', compact('product', 'productType'));
     }
+
     public function showEmbroideryProduct($id)
     {
         $product = Embroidery::findOrFail($id);
-        return view('collection.productDetails', compact('product'));
+        $productType = 'embroidery'; // 👈 بس السطر ده
+        return view('collection.productDetails', compact('product', 'productType'));
     }
 
     public function showGiftProduct($id)
     {
         $product = Gift::findOrFail($id);
-        return view('collection.productDetails', compact('product'));
+        $productType = 'gifts'; // 👈 بس السطر ده
+        return view('collection.productDetails', compact('product', 'productType'));
     }
 
 
