@@ -88,6 +88,10 @@ Route::get('/dashboard/contacts', [DashboardController::class, 'contactsIndex'])
 
 Route::get('/dashboard/orders/{id}', [DashboardController::class, 'showOrder'])->name('dashboard.order.show');
 Route::post('/dashboard/orders/{id}/status', [DashboardController::class, 'updateStatus'])->name('dashboard.order.status');
+use Laravel\Socialite\Facades\Socialite;
+
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback']);
 
 // Admin
 Route::middleware(['auth', 'admin'])->group(function () {

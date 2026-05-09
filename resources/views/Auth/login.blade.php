@@ -78,6 +78,14 @@
 
                 </form>
 
+                <div class="mt-3 text-center">
+                    <a href="{{ route('auth.google') }}"
+                        style="display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 20px;border:1px solid #ddd;border-radius:8px;text-decoration:none;color:#444;font-size:14px;background:#fff;">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="20" height="20">
+                        Continue with Google
+                    </a>
+                </div>
+
             </div>
 
         </div>

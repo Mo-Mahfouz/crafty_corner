@@ -7,6 +7,7 @@ use App\Models\ActivityLog;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -25,7 +26,6 @@ class AuthController extends Controller
             'role' => 'user',
         ]);
 
-        // ✅ سجل الـ register
         ActivityLog::create([
             'user_id' => $user->id,
             'action' => 'register',
@@ -46,7 +46,6 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
 
-            // ✅ سجل الـ login
             ActivityLog::create([
                 'user_id' => Auth::id(),
                 'action' => 'login',
@@ -68,7 +67,6 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        // ✅ سجل الـ logout
         ActivityLog::create([
             'user_id' => Auth::id(),
             'action' => 'logout',
@@ -79,6 +77,29 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        return redirect()->route('home');
+    }
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        $googleUser = Socialite::driver('google')->user();
+
+        $user = User::updateOrCreate(
+            ['email' => $googleUser->email],
+            [
+                'name' => $googleUser->name,
+                'password' => bcrypt(str()->random(16)),
+                'role' => 'user',
+            ]
+        );
+
+        Auth::login($user);
+
         return redirect()->route('home');
     }
 }
