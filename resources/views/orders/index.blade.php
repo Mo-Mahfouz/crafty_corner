@@ -132,7 +132,20 @@
                     <div>
                         <small class="text-muted">Shipping to: {{ $order->address }}</small>
                     </div>
-                    <b style="color: var(--main)">Total: EGP {{ number_format($order->total_price, 2) }}</b>
+                    <div class="d-flex align-items-center gap-3">
+                        @if($order->status == 'confirmed' || $order->status == 'completed')
+                            <a href="https://wa.me/201555677945?text=Hi! I'd like to track my order %23{{ $order->id }}"
+                                target="_blank" class="btn btn-sm" style="background:#25D366; color:#fff; border-radius:20px;">
+                                📦 Track Your Order
+                            </a>
+                        @elseif($order->status == 'canceled')
+                            <a href="https://wa.me/201555677945?text=Hi! My order %23{{ $order->id }} was rejected. Can you explain the reason?"
+                                target="_blank" class="btn btn-sm" style="background:#ff4d4d; color:#fff; border-radius:20px;">
+                                ❌ Explain Rejection Reason
+                            </a>
+                        @endif
+                        <b style="color: var(--main)">Total: EGP {{ number_format($order->total_price, 2) }}</b>
+                    </div>
                 </div>
             </div>
         @empty
