@@ -58,16 +58,38 @@ Route::middleware('auth')->group(function () {
     Route::delete('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
     Route::get('/my-orders', [CheckoutController::class, 'myOrders'])->name('orders.index');
-    // Checkout ✅
+    // Checkout
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 });
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('/dashboard/activity-logs', [ActivityLogController::class, 'index'])->name('dashboard.activity_logs');
+    Route::get('/dashboard/account', [AccountController::class, 'index'])->name('dashboard.account');
+    Route::post('/dashboard/account', [AccountController::class, 'update'])->name('dashboard.account.update');
+
+    // Add Product
+    Route::get('/dashboard/products/create', [ProductsController::class, 'create'])->name('dashboard.products.create');
+    Route::post('/dashboard/products', [ProductsController::class, 'store'])->name('dashboard.products.store');
+
+    // ✅ ضيف الأسطر دي
+    Route::get('/dashboard/products', [ProductsController::class, 'adminIndex'])->name('dashboard.products.index');
+    Route::get('/dashboard/products/{type}/{id}/edit', [ProductsController::class, 'edit'])->name('dashboard.products.edit');
+    Route::put('/dashboard/products/{type}/{id}', [ProductsController::class, 'update'])->name('dashboard.products.update');
+    Route::delete('/dashboard/products/{type}/{id}', [ProductsController::class, 'destroy'])->name('dashboard.products.destroy');
+});
+
 Route::get('/dashboard/orders/{id}', [DashboardController::class, 'showOrder'])->name('dashboard.order.show');
 Route::post('/dashboard/orders/{id}/status', [DashboardController::class, 'updateStatus'])->name('dashboard.order.status');
+
 // Admin
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/dashboard/activity-logs', [ActivityLogController::class, 'index'])->name('dashboard.activity_logs');
     Route::get('/dashboard/account', [AccountController::class, 'index'])->name('dashboard.account');
     Route::post('/dashboard/account', [AccountController::class, 'update'])->name('dashboard.account.update');
+
+    // ✅ Add Product
+    Route::get('/dashboard/products/create', [ProductsController::class, 'create'])->name('dashboard.products.create');
+    Route::post('/dashboard/products', [ProductsController::class, 'store'])->name('dashboard.products.store');
 });

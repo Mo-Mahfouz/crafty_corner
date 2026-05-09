@@ -73,33 +73,16 @@
 
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar px-4 d-flex justify-content-between align-items-center py-2">
-        <div class="d-flex gap-3">
-            <span>Shop</span>
-            <span>Admin</span>
-        </div>
+        <div class="d-flex gap-3"><span>Shop</span><span>Admin</span></div>
         <div class="logo">◇ sšr</div>
-        <div class="d-flex gap-3 align-items-center">
-            <span>👤 {{ Auth::user()->name }}</span>
-        </div>
+        <div class="d-flex gap-3 align-items-center"><span>👤 {{ Auth::user()->name }}</span></div>
     </nav>
 
     <div class="container-fluid">
         <div class="row">
 
-            <!-- Sidebar -->
-            <div class="col-md-2 sidebar p-3">
-                <a href="{{ route('dashboard.index') }}">Orders</a>
-                <a href="{{ route('dashboard.activity_logs') }}">Activity Logs</a>
-                <a href="{{ route('dashboard.account') }}" class="active">Account</a>
-                <div class="mt-5">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="btn text-danger w-100 text-start">Sign Out</button>
-                    </form>
-                </div>
-            </div>
+            @include('dashboard.partials.sidebar')
 
             <!-- Main -->
             <div class="col-md-10 p-4">
@@ -114,12 +97,9 @@
                 @endif
 
                 <div class="row">
-
-                    <!-- Profile Info -->
                     <div class="col-md-6">
                         <div class="card-box">
                             <h5 class="mb-4">Profile Information</h5>
-
                             <form method="POST" action="{{ route('dashboard.account.update') }}">
                                 @csrf
 
@@ -148,4 +128,30 @@
 
                                 <div class="mb-3">
                                     <label class="form-label">New Password</label>
-                                    <input type="password" name="password" class="form-
+                                    <input type="password" name="password"
+                                        class="form-control @error('password') is-invalid @enderror"
+                                        placeholder="Leave blank to keep current">
+                                    @error('password')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">Confirm New Password</label>
+                                    <input type="password" name="password_confirmation" class="form-control"
+                                        placeholder="Confirm new password">
+                                </div>
+
+                                <button type="submit" class="btn main-btn px-4">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

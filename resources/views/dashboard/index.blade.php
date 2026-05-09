@@ -94,38 +94,20 @@
 
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar px-4 d-flex justify-content-between align-items-center py-2">
-        <div class="d-flex gap-3">
-            <span>Shop</span>
-            <span>Admin</span>
-        </div>
+        <div class="d-flex gap-3"><span>Shop</span><span>Admin</span></div>
         <div class="logo">◇ sšr</div>
-        <div class="d-flex gap-3 align-items-center">
-            <span>👤 {{ Auth::user()->name }}</span>
-        </div>
+        <div class="d-flex gap-3 align-items-center"><span>👤 {{ Auth::user()->name }}</span></div>
     </nav>
 
     <div class="container-fluid">
         <div class="row">
 
-            <!-- Sidebar -->
-            <div class="col-md-2 sidebar p-3">
-                <a href="{{ route('dashboard.index') }}" class="active">Orders</a>
-                <a href="{{ route('dashboard.activity_logs') }}">Activity Logs</a>
-                <a href="{{ route('dashboard.account') }}">Account</a>
-                <div class="mt-5">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="btn text-danger w-100 text-start">Sign Out</button>
-                    </form>
-                </div>
-            </div>
+            @include('dashboard.partials.sidebar')
 
             <!-- Main -->
             <div class="col-md-10 p-4">
 
-                <!-- Header -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <h3>Orders Management</h3>
@@ -138,7 +120,6 @@
                     </div>
                 </div>
 
-                <!-- Stats -->
                 <div class="row mb-4">
                     <div class="col-md-3">
                         <div class="card-box text-center">
@@ -154,7 +135,6 @@
                     </div>
                 </div>
 
-                <!-- Table -->
                 <div class="card-box">
                     <table class="table">
                         <thead>
