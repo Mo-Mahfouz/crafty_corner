@@ -279,3 +279,20 @@ a {
     padding: 28px 24px;
   }
 }
+header div nav a:hover {
+            color: var(--gold) !important;
+        }
+        header div nav a {
+            transition: 0.3s;
+        }
+        header div nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width .3s;
+        }
+        header div nav a:hover::after {
+            width: 100%;
+        }

@@ -22,10 +22,10 @@
                     </p>
                     <div class="hero-btns d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-5">
                         <a href="{{ route('collection') }}"
-                            class="btn btn-b text-white px-4 py-2 rounded-2 link-offset-2 link-underline link-underline-opacity-0">Explore
+                            class=" btn-b text-white px-4 py-2 rounded-2  text-decoration-none ">Explore
                             Collection →</a>
                         <a href="{{ route('ourstory') }}"
-                            class="btn-outline text-black link-offset-2 link-underline link-underline-opacity-0">Our
+                            class="btn-outline text-black text-decoration-none">Our
                             Story</a>
                     </div>
                     <div class="hero-stats d-flex justify-content-center justify-content-lg-start gap-4 pt-4 border-top">

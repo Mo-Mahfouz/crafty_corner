@@ -1,4 +1,4 @@
-@extends('layouts.nav')
+@extends('layouts.nav') 
 
 @section('title', $product->name . ' – sšr')
 
@@ -18,17 +18,17 @@
         </script>
     @endif
 
-    <main class="product-page row container m-auto mt-5" style="margin-top:30px;">
-        <section class="product-gallery col-md-6">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="main-image" />
+    <main class="product-page row container m-auto">
+        <section class="product-gallery col-md-5 p-md-5">
+            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="main-image w-100" />
             <div class="thumbnails d-flex gap-3 mt-3">
-                <img src="{{ asset($product->image) }}" alt="Thumbnail 1" />
+                <!-- <img src="{{ asset($product->image) }}" alt="Thumbnail 1" />
                 <img src="{{ asset($product->image) }}" alt="Thumbnail 2" />
-                <img src="{{ asset($product->image) }}" alt="Thumbnail 3" />
+                <img src="{{ asset($product->image) }}" alt="Thumbnail 3" /> -->
             </div>
         </section>
 
-        <section class="product-info col-md-6">
+        <section class="product-info col-md-7 pt-5 mt-md-5 px-md-0">
             <p class="breadcrumb mt-2">COLLECTION / {{ strtoupper($productType) }}</p>
             <h1 class="fs-1 mb-3">{{ $product->name }}</h1>
             <div class="fs-5 text-m mb-2">
@@ -36,14 +36,14 @@
             </div>
             <p class="opacity-75">{{ $product->description }}</p>
 
-            <div class="d-flex align-items-center gap-3 mt-4">
-                <div class="quantity d-flex align-items-center gap-2">
+            <div class="d-flex justify-content-between align-items-center mt-4 row ">
+                <div class="quantity d-flex align-items-center justify-content-center gap-2 col-3">
                     <button onclick="changeQty(-1)" class="bg-white rounded-2 border-1 px-3 fs-6">-</button>
                     <span class="fs-5" id="qty">1</span>
                     <button onclick="changeQty(1)" class="bg-white rounded-2 border-1 px-3 fs-6">+</button>
                 </div>
 
-                <form action="{{ route('cart.add') }}" method="POST">
+                <form class="col-6" action="{{ route('cart.add') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <input type="hidden" name="product_type" value="{{ $productType }}">
@@ -51,12 +51,12 @@
                     <input type="hidden" name="image" value="{{ $product->image }}">
                     <input type="hidden" name="price" value="{{ $product->price }}">
                     <input type="hidden" name="quantity" id="qty-input" value="1">
-                    <button type="submit" class="add-cart bg-m text-white border-0 px-2 py-3 rounded-2 w-100">
+                    <button type="submit" class="add-cart bg-m text-white border-0 py-3 px-2 rounded-2  w-100">
                         Add to Cart
                     </button>
                 </form>
-
-                <div class="action-icons">
+                
+                <div class="action-icons col-3">
                     <button class="border-1 bg-white rounded-2 fs-6">
                         <i class="fa-regular fa-heart"></i>
                     </button>
@@ -83,8 +83,8 @@
         </section>
     </main>
 
-    <footer class="container py-5 border-top">
-        <div class="d-flex justify-content-center pt-3 border-top text-muted small">
+    <footer class="container">
+        <div class="d-flex justify-content-center py-4 border-top opacity-75">
             <span>© 2026 sšr</span>
         </div>
     </footer>

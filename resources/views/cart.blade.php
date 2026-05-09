@@ -180,7 +180,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-white border-soft rounded-4 p-4 mt-4 shadow-sm">
+                    <!-- <div class="bg-white border-soft rounded-4 p-4 mt-4 shadow-sm">
                         <h6 class="mb-3 fw-semibold">Have a promo code?</h6>
                         <div class="d-flex gap-2">
                             <input type="text" class="form-control py-2" placeholder="Enter code"
@@ -193,16 +193,16 @@
                         <h6 class="mb-3 fw-semibold">Message For Order</h6>
                         <textarea class="form-control" rows="5" placeholder="Write your notes here..."
                             style="resize:none;border:1px solid #e8e1da;"></textarea>
-                    </div>
+                    </div> -->
 
-                    <div class="bg-white border-soft rounded-4 p-4 mt-4 shadow-sm">
+                    <!-- <div class="bg-white border-soft rounded-4 p-4 mt-4 shadow-sm">
                         <h6 class="mb-3 fw-semibold">WhatsApp Number</h6>
                         <div class="input-group">
                             <span class="input-group-text" style="border:1px solid #e8e1da;">+20</span>
                             <input type="text" class="form-control" placeholder="Enter your WhatsApp number"
                                 style="border:1px solid #e8e1da;">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         @endif

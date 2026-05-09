@@ -6,20 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', 'sšr')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
         rel="stylesheet">
     @yield('styles')
+
+    <style>
+        header div nav a:hover {
+            color: var(--gold) !important;
+        }
+        header div nav a {
+            transition: 0.3s;
+        }
+        header div nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width .3s;
+        }
+        header div nav a:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body class="mt-1">
 
-    <header class="navbar sticky-top bg-white border-bottom px-md-5">
+    <header class="navbar sticky-top bg-white border-bottom px-md-5 d-flex justify-content-between align-items-center py-3">
         <div class="container-fluid">
             <nav class="d-flex gap-4 align-items-center">
-                <a href="{{ route('home') }}" class="text-dark text-decoration-none">Home</a>
+                <a href="{{ route('home') }}" class=" text-dark text-decoration-none">Home</a>
                 <a href="{{ route('collection') }}" class="text-dark text-decoration-none">Collection</a>
-                <a href="{{ route('cart.index') }}" class="text-dark text-decoration-none position-relative">
+                
+                <!-- @auth
+                    <a href="{{ route('orders.index') }}" class="text-dark text-decoration-none">My Orders</a> {{-- ✅ --}}
+                @endauth -->
+            </nav>
+
+            <a href="{{ route('home') }}" class="text-decoration-none fs-3 d-none d-md-block"
+                style="color:#d6a06a; font-family:'Cormorant Garamond',serif; ">
+                ◇ sšr
+            </a>
+
+            <div class="d-flex align-items-center gap-2">
+                 <a href="{{ route('cart.index') }}" class="text-dark text-decoration-none position-relative">
                     🛒
                     @auth
                         @php $cartCount = \App\Models\Cart::where('user_id', auth()->id())->sum('quantity'); @endphp
@@ -32,20 +65,9 @@
                     @endauth
                 </a>
                 @auth
-                    <a href="{{ route('orders.index') }}" class="text-dark text-decoration-none">My Orders</a> {{-- ✅ --}}
-                @endauth
-            </nav>
-
-            <a href="{{ route('home') }}" class="text-decoration-none mx-auto"
-                style="color:#d6a06a; font-family:'Cormorant Garamond',serif; font-size:22px;">
-                ◇ sšr
-            </a>
-
-            <div class="d-flex align-items-center gap-2">
-                @auth
                     <div class="dropdown">
-                        <div class="rounded-circle d-flex align-items-center justify-content-center"
-                            style="width:36px;height:36px;background:#d6a06a;color:white;font-weight:600;font-size:14px;cursor:pointer;"
+                        <div class="rounded-circle d-flex align-items-center fs-5 text-white justify-content-center"
+                            style="width:36px;height:36px;background:#d6a06a;cursor:pointer;"
                             data-bs-toggle="dropdown">
                             {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                         </div>
