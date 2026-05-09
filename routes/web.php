@@ -79,6 +79,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/dashboard/products/{type}/{id}', [ProductsController::class, 'destroy'])->name('dashboard.products.destroy');
 });
 
+// Users
+Route::get('/dashboard/users', [DashboardController::class, 'usersIndex'])->name('dashboard.users.index');
+Route::delete('/dashboard/users/{id}', [DashboardController::class, 'destroyUser'])->name('dashboard.users.destroy');
+
+// Contact
+Route::get('/dashboard/contacts', [DashboardController::class, 'contactsIndex'])->name('dashboard.contacts.index');
+
 Route::get('/dashboard/orders/{id}', [DashboardController::class, 'showOrder'])->name('dashboard.order.show');
 Route::post('/dashboard/orders/{id}/status', [DashboardController::class, 'updateStatus'])->name('dashboard.order.status');
 

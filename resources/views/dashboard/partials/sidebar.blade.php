@@ -9,6 +9,10 @@
         class="{{ request()->routeIs('dashboard.products.create') ? 'active' : '' }}">Add Product</a>
     <a href="{{ route('dashboard.products.index') }}"
         class="{{ request()->routeIs('dashboard.products.index') ? 'active' : '' }}">All Products</a>
+    <a href="{{ route('dashboard.users.index') }}"
+        class="{{ request()->routeIs('dashboard.users.*') ? 'active' : '' }}">Users</a>
+    <a href="{{ route('dashboard.contacts.index') }}"
+        class="{{ request()->routeIs('dashboard.contacts.*') ? 'active' : '' }}">Contact</a>
     <div class="mt-5">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
