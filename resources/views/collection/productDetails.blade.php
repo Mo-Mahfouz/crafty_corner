@@ -76,9 +76,9 @@
 
             <div class="d-flex align-items-center gap-3 mt-4">
                 <div class="quantity d-flex align-items-center gap-2">
-                    <button class="bg-white rounded-2 border-1 px-3 fs-6">-</button>
-                    <span class="fs-5">1</span>
-                    <button class="bg-white rounded-2 border-1 px-3 fs-6">+</button>
+                    <button onclick="changeQty(-1)" class="bg-white rounded-2 border-1 px-3 fs-6">-</button>
+                    <span class="fs-5" id="qty">1</span>
+                    <button onclick="changeQty(1)" class="bg-white rounded-2 border-1 px-3 fs-6">+</button>
                 </div>
 
                 <form action="{{ route('cart.add') }}" method="POST">
@@ -88,6 +88,7 @@
                     <input type="hidden" name="name" value="{{ $product->name }}">
                     <input type="hidden" name="image" value="{{ $product->image }}">
                     <input type="hidden" name="price" value="{{ $product->price }}">
+                    <input type="hidden" name="quantity" id="qty-input" value="1">
                     <button type="submit" class="add-cart bg-m text-white border-0 px-2 py-3 rounded-2 w-100">
                         Add to Cart
                     </button>
@@ -97,7 +98,7 @@
                     <button class="border-1 bg-white rounded-2 fs-6">
                         <i class="fa-regular fa-heart"></i>
                     </button>
-                    <button class="border-1 bg-white rounded-2 fs-6">
+                    <button onclick="shareProduct()" class="border-1 bg-white rounded-2 fs-6" title="Share">
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
                 </div>
@@ -227,6 +228,30 @@
         </div>
 
     </footer>
+    <script>
+        function shareProduct() {
+            navigator.clipboard.writeText(window.location.href);
+
+            const toast = document.createElement('div');
+            toast.innerText = '🔗 Link copied!';
+            toast.style.cssText = `
+            position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+            background:#d6a06a; color:white; padding:10px 24px;
+            border-radius:8px; font-size:14px; z-index:9999;
+        `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2500);
+        }
+    </script>
+    <script>
+        function changeQty(change) {
+            const qtyEl = document.getElementById('qty');
+            let qty = parseInt(qtyEl.innerText) + change;
+            if (qty < 1) qty = 1;
+            qtyEl.innerText = qty;
+            document.getElementById('qty-input').value = qty;
+        }
+    </script>
 </body>
 
 </html>

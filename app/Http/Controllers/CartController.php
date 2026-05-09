@@ -33,7 +33,7 @@ class CartController extends Controller
                 'name' => $request->name,
                 'image' => $request->image,
                 'price' => $request->price,
-                'quantity' => 1,
+                'quantity' => $request->quantity ?? 1,
             ]);
         }
 
