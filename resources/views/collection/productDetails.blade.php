@@ -36,14 +36,14 @@
             </div>
             <p class="opacity-75">{{ $product->description }}</p>
 
-            <div class="d-flex justify-content-between align-items-center mt-4 row ">
+            <div class="d-flex justify-content-center align-items-center mt-4 row ">
                 <div class="quantity d-flex align-items-center justify-content-center gap-2 col-3">
-                    <button onclick="changeQty(-1)" class="bg-white rounded-2 border-1 px-3 fs-6">-</button>
-                    <span class="fs-5" id="qty">1</span>
-                    <button onclick="changeQty(1)" class="bg-white rounded-2 border-1 px-3 fs-6">+</button>
+                    <button onclick="changeQty(-1)" class="bg-white rounded-2 border-1 px-3 py-1 fs-5">-</button>
+                    <span class="fs-4" id="qty">1</span>
+                    <button onclick="changeQty(1)" class="bg-white rounded-2 border-1 px-3 py-1 fs-5">+</button>
                 </div>
 
-                <form class="col-6" action="{{ route('cart.add') }}" method="POST">
+                <form class="col-6 me-5" action="{{ route('cart.add') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <input type="hidden" name="product_type" value="{{ $productType }}">
@@ -56,10 +56,7 @@
                     </button>
                 </form>
                 
-                <div class="action-icons col-3">
-                    <button class="border-1 bg-white rounded-2 fs-6">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
+                <div class="action-icons col-2">
                     <button onclick="shareProduct()" class="border-1 bg-white rounded-2 fs-6" title="Share">
                         <i class="fa-solid fa-share-nodes"></i>
                     </button>
