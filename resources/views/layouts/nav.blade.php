@@ -12,7 +12,7 @@
     @yield('styles')
 </head>
 
-<body>
+<body class="mt-1">
 
     <header class="navbar sticky-top bg-white border-bottom px-md-5">
         <div class="container-fluid">

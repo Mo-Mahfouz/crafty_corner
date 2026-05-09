@@ -18,7 +18,7 @@
         </script>
     @endif
 
-    <main class="product-page row container m-auto" style="margin-top:30px;">
+    <main class="product-page row container m-auto mt-5" style="margin-top:30px;">
         <section class="product-gallery col-md-6">
             <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="main-image" />
             <div class="thumbnails d-flex gap-3 mt-3">
