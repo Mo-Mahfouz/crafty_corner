@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
-use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $orders = Cart::with('user')->latest()->get(); // ✅ جيب كل الأوردرات
+        $orders = Order::with(['user', 'items'])->latest()->get();
         $totalOrders = $orders->count();
         $totalUsers = User::where('role', 'user')->count();
 

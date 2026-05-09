@@ -171,10 +171,20 @@
                                 <tr>
                                     <td>#{{ $order->id }}</td>
                                     <td>{{ $order->user->name ?? 'N/A' }}</td>
-                                    <td>{{ $order->quantity }}</td>
+                                    <td>{{ $order->items->count() }}</td>
                                     <td>EGP {{ number_format($order->total_price, 2) }}</td>
                                     <td>
-                                        <span class="status blue">Pending</span>
+                                        @if($order->status == 'pending')
+                                            <span class="status orange">Pending</span>
+                                        @elseif($order->status == 'under_review')
+                                            <span class="status blue">Under Review</span>
+                                        @elseif($order->status == 'confirmed')
+                                            <span class="status green">Confirmed</span>
+                                        @elseif($order->status == 'completed')
+                                            <span class="status green">Completed</span>
+                                        @elseif($order->status == 'canceled')
+                                            <span class="status red">Canceled</span>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty
