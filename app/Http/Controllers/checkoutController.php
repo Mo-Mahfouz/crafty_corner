@@ -32,10 +32,8 @@ class CheckoutController extends Controller
         $cartItems = Cart::where('user_id', Auth::id())->get();
         $total = $cartItems->sum(fn($item) => $item->price * $item->quantity);
 
-        // ✅ رفع الـ screenshot
         $screenshotPath = $request->file('payment_screenshot')->store('payments', 'public');
 
-        // ✅ إنشاء الأوردر
         $order = Order::create([
             'user_id' => Auth::id(),
             'total_price' => $total,
@@ -47,7 +45,6 @@ class CheckoutController extends Controller
             'payment_screenshot' => $screenshotPath,
         ]);
 
-        // ✅ إنشاء الـ OrderItems
         foreach ($cartItems as $item) {
             OrderItem::create([
                 'order_id' => $order->id,
@@ -60,10 +57,8 @@ class CheckoutController extends Controller
             ]);
         }
 
-        // ✅ مسح الـ Cart
         Cart::where('user_id', Auth::id())->delete();
 
-        // ✅ تسجيل في الـ Activity Log
         ActivityLog::create([
             'user_id' => Auth::id(),
             'action' => 'order',
@@ -71,6 +66,17 @@ class CheckoutController extends Controller
             'ip_address' => $request->ip(),
         ]);
 
-        return redirect()->route('home')->with('success', 'Order placed successfully!');
+        return redirect()->route('orders.index')->with('success', 'Order placed successfully!'); // ✅ بعد الأوردر يروح لـ my orders
+    }
+
+    // ✅ My Orders
+    public function myOrders()
+    {
+        $orders = Order::with('items')
+            ->where('user_id', Auth::id())
+            ->latest()
+            ->get();
+
+        return view('orders.index', compact('orders'));
     }
 }

@@ -1,94 +1,89 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Nourhan Store</title>
+    <title>Login | sšr</title>
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-<div class="store-container">
+    <div class="store-container">
 
-    <div class="signin-layout">
+        <div class="signin-layout">
 
-        <!-- LEFT SIDE -->
-        <div class="story-area">
-            <div class="tagline">
-                <h2>Curating Timeless Elegance</h2>
-                <p>Welcome back to Nourhan Store — continue your journey in refined fashion.</p>
-            </div>
-
-            <div class="heirloom-image">
-                <img src="{{ asset('images/loginImage.png') }}" alt="Luxury fashion">
-                <div class="image-caption">✨ welcome back ✨</div>
-            </div>
-
-            <div class="brand-store-name">Nourhan Store</div>
-
-            <div class="artisan-badges">
-                <span>secure login</span>
-                <span>fast checkout</span>
-                <span>premium access</span>
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="form-panel">
-
-            <h1>Welcome Back</h1>
-            <div class="subhead">Login to access your account</div>
-
-            <form class="login-form" action="{{ url('/login') }}" method="POST">
-                @csrf
-
-                <!-- EMAIL -->
-                <div class="input-field">
-                    <label>Email</label>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        value="{{ old('email') }}" 
-                        placeholder="name@example.com"
-                    >
-
-                    @error('email')
-                        <span style="color:red; font-size:12px;">{{ $message }}</span>
-                    @enderror
+            <!-- LEFT SIDE -->
+            <div class="story-area">
+                <div class="tagline">
+                    <h2>Curating Timeless Elegance</h2>
+                    <p>Welcome back to sšr — continue your journey in refined fashion.</p>
                 </div>
 
-                <!-- PASSWORD -->
-                <div class="input-field">
-                    <label>Password</label>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        placeholder="••••••••"
-                    >
-
-                    @error('password')
-                        <span style="color:red; font-size:12px;">{{ $message }}</span>
-                    @enderror
+                <div class="heirloom-image">
+                    <img src="{{ asset('images/loginImage.png') }}" alt="Luxury fashion">
+                    <div class="image-caption">✨ welcome back ✨</div>
                 </div>
 
-                <button type="submit" class="signin-btn">Sign In</button>
+                <div class="brand-store-name">sšr</div>
 
-                <div class="guest-area">
-                    Don't have an account?
-                    <a href="{{ url('/register') }}" class="guest-link">Create one</a>
+                <div class="artisan-badges">
+                    <span>secure login</span>
+                    <span>fast checkout</span>
+                    <span>premium access</span>
                 </div>
+            </div>
 
-            </form>
+            <!-- RIGHT SIDE -->
+            <div class="form-panel">
+
+                <h1>Welcome Back</h1>
+                <div class="subhead">Login to access your account</div>
+
+                <form class="login-form" action="{{ url('/login') }}" method="POST">
+                    @csrf
+
+                    <!-- EMAIL -->
+                    <div class="input-field">
+                        <label>Email</label>
+                        <input type="email" name="email" value="{{ old('email') }}" placeholder="name@example.com">
+
+                        @error('email')
+                            <span style="color:red; font-size:12px;">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="input-field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="••••••••">
+
+                        @error('password')
+                            <span style="color:red; font-size:12px;">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="signin-btn">Sign In</button>
+
+                    <div class="guest-area">
+                        Don't have an account?
+                        <a href="{{ url('/register') }}" class="guest-link">Create one</a>
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
 </body>
+
 </html>

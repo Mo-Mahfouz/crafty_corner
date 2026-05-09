@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title', 'Nourhan Store – Handcrafted with Love')
+@section('title', 'sšr – Handcrafted with Love')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -13,7 +13,7 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 hero-text text-center text-lg-start">
                     <span class="label mb-1 d-block text-gold fs-7">✦ LIMITED EDITION COLLECTION</span>
-                    <h1 class="display-4 mb-2">Nourhan Store:</h1>
+                    <h1 class="display-4 mb-2">sšr:</h1>
                     <h2 class="mb-3 fs-2 text-gold">Handcrafted with Love</h2>
                     <p class="mb-5 mx-auto mx-lg-0 opacity-50">
                         Discover the delicate art of bespoke embroidery and luxury baby
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-sm-12 col-md-6 col-lg-4 footer-brand text-center text-lg-start">
-                    <h3 class="mb-3">Nourhan Store</h3>
+                    <h3 class="mb-3">sšr</h3>
                     <p class="text-black opacity-50">Elevating your everyday style with curated collections.</p>
                 </div>
                 <div
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="footer-bottom mt-5 pt-3 border-top text-center text-muted">
-                <p>© 2026 Nourhan Store. All rights reserved.</p>
+                <p>© 2026 sšr. All rights reserved.</p>
             </div>
         </div>
     </footer>

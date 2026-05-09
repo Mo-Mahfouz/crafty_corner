@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title', 'Our Collection – Nourhan Store')
+@section('title', 'Our Collection – sšr')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/collection.css') }}">
@@ -94,7 +94,7 @@
     <footer class="footer">
         <div class="row">
             <div class="footer-brand col-lg-4 col-md-6 col-sm-12">
-                <h3>Nourhan Store</h3>
+                <h3>sšr</h3>
                 <p>Elevating your everyday style with curated collections.</p>
             </div>
             <div class="footer-col col-lg-4 col-md-6 col-sm-12">
@@ -114,7 +114,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Nourhan Store. All rights reserved.</p>
+            <p>© 2026 sšr. All rights reserved.</p>
         </div>
     </footer>
 @endsection

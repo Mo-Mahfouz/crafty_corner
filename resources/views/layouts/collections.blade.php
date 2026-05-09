@@ -13,7 +13,7 @@
     <header class="site-header">
         <div class="container header-inner">
             <div class="logo">
-                <h1><span class="logo-icon">◇</span> Nourhan Store</h1>
+                <h1><span class="logo-icon">◇</span> sšr</h1>
             </div>
         </div>
     </header>
@@ -33,7 +33,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Nourhan Store. All rights reserved.</p>
+            <p>© 2026 sšr. All rights reserved.</p>
         </div>
     </footer>
 </body>

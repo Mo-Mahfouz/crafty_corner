@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@yield('title', 'Nourhan Store')</title>
+    <title>@yield('title', 'sšr')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
@@ -31,11 +31,14 @@
                         @endif
                     @endauth
                 </a>
+                @auth
+                    <a href="{{ route('orders.index') }}" class="text-dark text-decoration-none">My Orders</a> {{-- ✅ --}}
+                @endauth
             </nav>
 
             <a href="{{ route('home') }}" class="text-decoration-none mx-auto"
                 style="color:#d6a06a; font-family:'Cormorant Garamond',serif; font-size:22px;">
-                ◇ Nourhan Store
+                ◇ sšr
             </a>
 
             <div class="d-flex align-items-center gap-2">
@@ -50,6 +53,9 @@
                             <li><span class="dropdown-item text-muted">{{ auth()->user()->name }}</span></li>
                             <li>
                                 <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a href="{{ route('orders.index') }}" class="dropdown-item">My Orders</a> {{-- ✅ --}}
                             </li>
                             <li>
                                 <form action="{{ route('logout') }}" method="POST">

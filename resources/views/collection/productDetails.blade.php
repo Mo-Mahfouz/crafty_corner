@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title', $product->name . ' – Nourhan Store')
+@section('title', $product->name . ' – sšr')
 
 @section('styles')
     <link rel="stylesheet" href="{{ asset('css/productDetails.css') }}">
@@ -85,7 +85,7 @@
 
     <footer class="container py-5 border-top">
         <div class="d-flex justify-content-center pt-3 border-top text-muted small">
-            <span>© 2026 Nourhan Store</span>
+            <span>© 2026 sšr</span>
         </div>
     </footer>
 @endsection

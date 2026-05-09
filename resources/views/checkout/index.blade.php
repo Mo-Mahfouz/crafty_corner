@@ -90,7 +90,7 @@
     <!-- Navbar -->
     <nav class="navbar px-4 d-flex justify-content-between align-items-center py-3">
         <a href="{{ route('home') }}" class="text-decoration-none">
-            <span class="logo">◇ Nourhan Store</span>
+            <span class="logo">◇ sšr</span>
         </a>
         <div class="d-flex gap-3">
             <a href="{{ route('home') }}" class="text-decoration-none text-dark">Home</a>
@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <small class="text-muted">INSTAPAY</small>
-                                    <p><b>nourhan.store@instapay</b></p>
+                                    <p><b>Nouryy_123.store@instapay</b></p>
                                 </div>
                             </div>
                         </div>

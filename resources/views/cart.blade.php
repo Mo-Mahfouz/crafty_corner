@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 
-@section('title', 'Cart – Nourhan Store')
+@section('title', 'Cart – sšr')
 
 @section('styles')
     <style>
@@ -211,7 +211,7 @@
     <footer class="border-top mt-5 py-5 bg-soft">
         <div class="container">
             <div class="d-flex justify-content-center pt-3 text-secondary small">
-                <span>© 2026 Nourhan Store. All rights reserved.</span>
+                <span>© 2026 sšr. All rights reserved.</span>
             </div>
         </div>
     </footer>
