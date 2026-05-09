@@ -61,7 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 });
-
+Route::get('/dashboard/orders/{id}', [DashboardController::class, 'showOrder'])->name('dashboard.order.show');
+Route::post('/dashboard/orders/{id}/status', [DashboardController::class, 'updateStatus'])->name('dashboard.order.status');
 // Admin
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

@@ -169,7 +169,10 @@
                         <tbody>
                             @forelse($orders as $order)
                                 <tr>
-                                    <td>#{{ $order->id }}</td>
+                                    <td>
+                                        <a href="{{ route('dashboard.order.show', $order->id) }}"
+                                            style="color: var(--main)">#{{ $order->id }}</a>
+                                    </td>
                                     <td>{{ $order->user->name ?? 'N/A' }}</td>
                                     <td>{{ $order->items->count() }}</td>
                                     <td>EGP {{ number_format($order->total_price, 2) }}</td>
