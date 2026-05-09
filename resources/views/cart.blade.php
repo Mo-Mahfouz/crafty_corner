@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.nav')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nourhan Store Cart</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+@section('title', 'Cart – Nourhan Store')
+
+@section('styles')
     <style>
         body {
             background: #f8f7f5;
@@ -30,18 +24,6 @@
 
         .bg-soft {
             background: #fbfaf8;
-        }
-
-        .diamond {
-            width: 16px;
-            height: 16px;
-            border: 2px solid #d6a06a;
-            transform: rotate(45deg);
-        }
-
-        .logo {
-            font-size: 34px;
-            font-weight: 600;
         }
 
         .title {
@@ -66,10 +48,6 @@
         .total-price {
             font-size: 42px;
             font-weight: 700;
-        }
-
-        .rounded-4 {
-            border-radius: 18px;
         }
 
         .btn-gold {
@@ -104,47 +82,10 @@
             object-fit: cover;
             border-radius: 12px;
         }
-
-        .footer-text {
-            color: #7b7b7b;
-            transition: .3s;
-            cursor: pointer;
-        }
-
-        .footer-text:hover {
-            color: #d6a06a;
-        }
     </style>
-</head>
+@endsection
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-soft border-bottom py-4">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">Shop</a>
-            <div class="d-flex align-items-center gap-3">
-                <div class="diamond"></div>
-                <span class="logo serif gold">Nourhan Store</span>
-            </div>
-            <div class="d-flex align-items-center gap-4">
-                <div class="position-relative fs-5">
-                    👜
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
-                        {{ $cartItems->count() }}
-                    </span>
-                </div>
-                @auth
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-gold px-4 py-2 rounded-3">Logout</button>
-                    </form>
-                @else
-                    <a href="{{ route('login') }}" class="btn btn-outline-gold px-4 py-2 rounded-3">Sign In</a>
-                @endauth
-            </div>
-        </div>
-    </nav>
-
+@section('content')
     <div class="container py-5">
         <p class="text-secondary small mb-4">Home > Shopping Bag</p>
         <h1 class="title serif mb-5">Your Cart</h1>
@@ -157,7 +98,6 @@
         @else
             <div class="row g-5">
                 <div class="col-lg-8">
-
                     @foreach($cartItems as $item)
                         <div class="border-top py-4 d-flex justify-content-between">
                             <div class="d-flex gap-4">
@@ -166,8 +106,6 @@
                                     <p class="text-uppercase small fw-semibold gold mb-2">{{ $item->product_type }}</p>
                                     <h2 class="item-title serif">{{ $item->name }}</h2>
                                     <p class="text-secondary">${{ $item->price }}</p>
-
-                                    {{-- زرار تحديث الكمية --}}
                                     <div
                                         class="qty-box border-soft rounded-3 d-flex justify-content-around py-2 bg-white align-items-center">
                                         <form action="{{ route('cart.update', $item->id) }}" method="POST">
@@ -184,7 +122,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="d-flex flex-column justify-content-between text-end">
                                 <h3 class="price serif">${{ $item->price * $item->quantity }}</h3>
                                 <form action="{{ route('cart.remove', $item->id) }}" method="POST">
@@ -278,6 +215,4 @@
             </div>
         </div>
     </footer>
-</body>
-
-</html>
+@endsection
