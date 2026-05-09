@@ -91,30 +91,38 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="row">
-            <div class="footer-brand col-lg-4 col-md-6 col-sm-12">
-                <h3>sšr</h3>
-                <p>Elevating your everyday style with curated collections.</p>
+    <footer class="footer border-top bg-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-sm-12 col-md-6 col-lg-4 footer-brand text-center text-lg-start">
+                    <h3 class="mb-3">sšr</h3>
+                    <p class="text-black opacity-50">Elevating your everyday style with curated collections.</p>
+                </div>
+                <div
+                    class="col-sm-12 col-md-6 col-lg-4 footer-col ps-5 d-flex d-md-block flex-column justify-content-center align-items-center">
+                    <h4 class="mb-4 pe-5">Shop</h4>
+                    <ul class="d-flex flex-column p-0">
+                        <a class="text-black link-offset-2 link-underline link-underline-opacity-0 opacity-50 mb-2"
+                            href="{{ route('home') }}">Home</a>
+                        <a class="text-black link-offset-2 link-underline link-underline-opacity-0 opacity-50"
+                            href="{{ route('collection') }}">All Collections</a>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-4 footer-col">
+                    <h4 class="mb-4">Support / Contact</h4>
+                    <form action="{{ route('contact.store') }}" method="POST" class="d-flex flex-column gap-2">
+                        @csrf
+                        <input type="text" name="name" class="form-control" placeholder="Your Name">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email">
+                        <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+                        <button type="submit"
+                            class="btn btn-b text-white px-4 py-2 rounded-2 w-100 justify-content-center">Send</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-col col-lg-4 col-md-6 col-sm-12">
-                <h4>Shop</h4>
-                <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('collection') }}">All Collections</a>
+            <div class="footer-bottom mt-5 pt-3 border-top text-center text-muted">
+                <p>© 2026 sšr. All rights reserved.</p>
             </div>
-            <div class="footer-col col-lg-4 col-md-12 col-sm-12">
-                <h4>Support</h4>
-                <form action="{{ route('contact.store') }}" method="POST">
-                    @csrf
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 sšr. All rights reserved.</p>
         </div>
     </footer>
 @endsection

@@ -15,28 +15,67 @@
 
 </head>
 
-<body>
+<body >
 
-    <!-- NAVBAR (same home) -->
-    <header class="navbar navbar-expand-lg sticky-top bg-white py-3">
-        <div class="container-fluid px-md-5">
-            <nav class="nav-links d-none d-lg-flex gap-4 ">
-                <a class="text-black opacity-75 link-offset-2 link-underline link-underline-opacity-0"
-                    href="{{ route('home') }}">Home</a>
-                <a class="text-black opacity-75 link-offset-2 link-underline link-underline-opacity-0"
-                    href="{{ route('collection') }}">Collection</a>
+         <header class="navbar sticky-top bg-white border-bottom px-md-5 d-flex justify-content-between align-items-center ">
+        <div class="container-fluid ">
+            <nav class="d-flex gap-4 align-items-center">
+                <a href="{{ route('home') }}" class=" text-decoration-none">Home</a>
+                <a href="{{ route('collection') }}" class=" text-decoration-none">Collection</a>
             </nav>
 
-            <a href="{{ route('home') }}"
-                class="logo mx-auto mx-lg-0 text-gold link-offset-2 link-underline link-underline-opacity-0">
-                <span class="logo-icon ">◇</span> sšr
+            <a href="{{ route('home') }}" class="text-decoration-none d-none d-md-block"
+                style="color:#d6a06a; font-family:'Cormorant Garamond',serif; font-size:25px;">
+                <span >◇</span> sšr
             </a>
+
+            <div class="d-flex align-items-center gap-3">
+                 <a href="{{ route('cart.index') }}" class="text-dark text-decoration-none position-relative">
+                    🛒
+                    @auth
+                        @php $cartCount = \App\Models\Cart::where('user_id', auth()->id())->sum('quantity'); @endphp
+                        @if($cartCount > 0)
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
+                                {{ $cartCount }}
+                            </span>
+                        @endif
+                    @endauth
+                </a>
+                @auth
+                    <div class="dropdown">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center"
+                            style="width:36px;height:36px;background:#d6a06a;color:white;font-weight:600;font-size:14px;cursor:pointer;"
+                            data-bs-toggle="dropdown">
+                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><span class="dropdown-item text-muted">{{ auth()->user()->name }}</span></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a href="{{ route('orders.index') }}" class="dropdown-item">My Orders</a> {{-- ✅ --}}
+                            </li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item text-danger">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @else
+                    <a href="{{ route('login') }}" class="text-dark text-decoration-none opacity-75">Login</a>
+                    <a href="{{ route('register') }}" class="text-dark text-decoration-none opacity-75">Register</a>
+                @endauth
+            </div>
         </div>
     </header>
 
     <!-- OUR STORY SECTION (same style as home sections) -->
-    <section class="bg-cream min-vh-100 d-flex align-items-center">
-        <div class="container py-5">
+    <section class="bg-cream py-5 d-flex align-items-center">
+        <div class="container">
 
             <div class="row align-items-center g-5">
 

@@ -93,34 +93,7 @@ a {
 }
 
 /* ── NAVBAR ── */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  height: 62px;
-}
 
-.nav-links {
-  display: flex;
-  gap: 28px;
-}
-.nav-links a {
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: var(--mid);
-  transition: color 0.2s;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--gold);
-}
 
 .logo {
   font-family: var(--font-sans);
